@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #767257;
+            color: #100f07;
+        }
+
+        h1 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 48px;
+            margin: 0;
+            opacity: 0;
+            animation: fade-in 2s ease-in forwards;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Blink animation for "There" */
+        .blink-animation {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Logo */
+        .logo {
+            display: block;
+            width: 450px;
+            height: 10px;
+            background-color: #100f07;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            animation: rainbow 10s linear infinite;
+        }
+
+        @keyframes rainbow {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Section styles */
+        .section {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        /* Navigation styles */
+        .nav {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .nav li {
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        .nav li.active {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            const navItems = document.querySelectorAll('.nav li');
+
+            // Function to handle tab switching
+            function switchTab(index) {
+                sections.forEach((section, i) => {
+                    if (i === index) {
+                        section.classList.add('active');
+                        navItems[i].classList.add('active');
+                    } else {
+                        section.classList.remove('active');
+                        navItems[i].classList.remove('active');
+                    }
+                });
+            }
+
+            // Event listeners for tab clicks
+            navItems.forEach((navItem, index) => {
+                navItem.addEventListener('click', function() {
+                    switchTab(index);
+                });
+            });
+
+            // Show the first tab by default
+            switchTab(0);
+        });
+    </script>
+</head>
+<body>
+    <div class="logo"></div>
+    <h1>
+        Tanay Dulipala<span class="blink-animation">.</span>
+    </h1>
+
+    <ul class="nav">
+        <li>About</li>
+        <li>Experience</li>
+        <li>Projects/Achievements</li>
+        <li>Skills</li>
+        <li>Contact Me</li>
+    </ul>
+
+    <div class="section">
+        <h2>About</h2>
+        <p>This is the About section.</p>
+    </div>
+
+    <div class="section">
+        <h2>Experience</h2>
+        <p>This is the Experience section.</p>
+    </div>
+
+    <div class="section">
+        <h2>Projects/Achievements</h2>
+        <p>This is the Projects/Achievements section.</p>
+    </div>
+
+    <div class="section">
+        <h2>Skills</h2>
+        <p>This is the Skills section.</p>
+    </div>
+
+    <div class="section">
+        <h2>Contact Me</h2>
+        <p>This is the Contact Me section.</p>
+    </div>
+</body>
+</html>
+In this updated code, I added the following CSS rule to the .logo class:
+
+css
+Copy code
+.logo {
+    /* Existing styles */
+    
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    animation: rainbow 10s linear infinite;
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
